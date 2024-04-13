@@ -31,11 +31,18 @@ function drawGrid(squares) {
       gridItem.addEventListener('mouseover', (event) => {
         event.target.style.backgroundColor = 'salmon';
       });
+
       gridItem.addEventListener('mouseout', (event) => {
         const rInteger = randomRGBValue();
         const gInteger = randomRGBValue();
         const bInteger = randomRGBValue();
         event.target.style.backgroundColor = rgb(rInteger, gInteger, bInteger); //'green';
+        const existingStyle = window.getComputedStyle(gridItem);
+        const existingOpacity = existingStyle.opacity;
+        const newOpacity = parseFloat(existingOpacity) + 0.1;
+        if (newOpacity < 1) {
+          event.target.style.opacity = newOpacity;
+        }
       });
       grid.appendChild(gridItem);
     }

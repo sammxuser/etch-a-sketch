@@ -17,6 +17,7 @@
   border: 1px solid salmon;
   width: 10px;
   height: 10px;
+  opacity: 10%;
 }
 .error {
   color: red;
