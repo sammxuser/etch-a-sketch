@@ -32,9 +32,21 @@ function drawGrid(squares) {
         event.target.style.backgroundColor = 'salmon';
       });
       gridItem.addEventListener('mouseout', (event) => {
-        event.target.style.backgroundColor = 'green';
+        const rInteger = randomRGBValue();
+        const gInteger = randomRGBValue();
+        const bInteger = randomRGBValue();
+        event.target.style.backgroundColor = rgb(rInteger, gInteger, bInteger); //'green';
       });
       grid.appendChild(gridItem);
     }
   }
+}
+
+function rgb(r, g, b) {
+  return `rgb(${Math.floor(r)}, ${Math.floor(g)}, ${Math.floor(b)})`;
+}
+
+function randomRGBValue() {
+  const randomFloat = Math.random();
+  return Math.floor(randomFloat * 256);
 }
