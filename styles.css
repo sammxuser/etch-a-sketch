@@ -1,5 +1,13 @@
+#container {
+  display: flex;
+  margin-left: 10%;
+  margin-top: 10%;
+  width: 800px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
 div {
-  border: 1px solid blueviolet;
   width: 100px;
   height: 100px;
+  border-bottom: 1px solid #efa;
 }
